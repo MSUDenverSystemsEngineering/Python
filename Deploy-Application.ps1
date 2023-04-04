@@ -67,13 +67,13 @@ Try {
 	## Variables: Application
 	[string]$appVendor = 'Python'
 	[string]$appName = 'Python'
-	[string]$appVersion = '3.10.6'
+	[string]$appVersion = '3.11.2'
 	[string]$appArch = 'x64'
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
 	[string]$appScriptVersion = '1.0.0'
-	[string]$appScriptDate = '08/05/2022'
-	[string]$appScriptAuthor = 'Ryan McKenna'
+	[string]$appScriptDate = '04/04/2023'
+	[string]$appScriptAuthor = 'Will Jarvill'
 	##*===============================================
 	## Variables: Install Titles (Only set here to override defaults set by the toolkit)
 	[string]$installName = ''
@@ -141,7 +141,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-		$exitCode = Execute-Process -Path "$dirFiles\python-3.10.6-amd64.exe" -Parameters '/quiet InstallAllUsers=1 PrependPath=1' -WindowStyle 'Hidden'
+		$exitCode = Execute-Process -Path "$dirFiles\python-3.11.2-amd64.exe" -Parameters '/quiet InstallAllUsers=1 PrependPath=1' -WindowStyle 'Hidden'
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 
 		##*===============================================
@@ -168,7 +168,7 @@ Try {
 		Show-InstallationProgress
 
 		## <Perform Pre-Uninstallation tasks here>
-		$exitCode = Execute-Process -Path "$dirFiles\python-3.9.6-amd64.exe" -Parameters '/uninstall /quiet' -WindowStyle 'Hidden'
+		$exitCode = Execute-Process -Path "$dirFiles\python-3.11.2-amd64.exe" -Parameters '/uninstall /quiet' -WindowStyle 'Hidden'
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 
 		##*===============================================
@@ -245,8 +245,8 @@ Catch {
 # SIG # Begin signature block
 # MIImVgYJKoZIhvcNAQcCoIImRzCCJkMCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCDLpByhKhD4Huo1
-# Zrx4jO8aFt2cydBvQ+tUaLMIFoecjaCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBv3l3YiJJOPkj+
+# 2cHIq1Msf/FX1X+n93DSR/KKUmZpWaCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
 # jTanyYqJ1pQWMA0GCSqGSIb3DQEBDAUAMHsxCzAJBgNVBAYTAkdCMRswGQYDVQQI
 # DBJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcMB1NhbGZvcmQxGjAYBgNVBAoM
 # EUNvbW9kbyBDQSBMaW1pdGVkMSEwHwYDVQQDDBhBQUEgQ2VydGlmaWNhdGUgU2Vy
@@ -420,32 +420,32 @@ Catch {
 # ZDErMCkGA1UEAxMiU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5nIENBIFIzNgIR
 # AKVN33D73PFMVIK48rFyyjEwDQYJYIZIAWUDBAIBBQCggYQwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQgYwzF1NpmF4TX
-# l6BSPSoJduDJR/HXBFjF4QBbuCTK/xwwDQYJKoZIhvcNAQEBBQAEggGAA8NDc5xE
-# 0JDUjIUEGzOvjo//pNnjyRhjKLjwaVgEdRRT/afYCevDYzGbPLTFImORqpwUXO0q
-# xuRi3N0wGKTTJFLua9UpzTuOCzIWeg1dlZfAf9vVeRwlZJWJaFvi1ge8+H1poag8
-# 4G5RSyr7gstcHR6/z4hqnu/iFotkgkAlNh7wkHAjTsd2amEK3qwPlatDrf2PpOJS
-# 5DWvl+7qbfBPVPKLPyDsqrovcV57lwPTlHSrnqImjxu/uwBeC0CenVc6Gu2zcRHI
-# jmo2Ul9nreBiM/o12JWQQPvo/xcMRD35pTaR2AQs2L289JXll7tnG90ZZzWg8tYC
-# R8nstLYXHT8WBLoc+9Ar6ueuAiHjwS/ooBXWH4Xj4BYKD3yGZB0PfGFMep1Yxfuh
-# +qJgSVXR3kctfwiSjMjBmGRxM4cO8YJYw95W+8yyMuPaIvZPXZ7sk/0512P6qQ9Q
-# vX/7uUvVvPt7VIM+9okETiif/JSpxCqCTkAfWxAkR3SsyoePWe6HaGdDoYIDTDCC
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQgM3kzyLC8zvux
+# x5JKekSp1SaBGwJU14GSrZ0K+T4uRcswDQYJKoZIhvcNAQEBBQAEggGAes9nDAO7
+# VFyKG0RTMYEwHacYgop2VYVrA1TUFRGz+DEDdHR3YdLutQ83GzzRKdZIgXIvP2s0
+# gevfBGIIBV2PdL8OZ9JisLI1/X7BC+0VvuUn5Gn/rvNb7AVxyyU0PirJHi0FBEh4
+# SGTXvsEHUulRucOWjE9o+O1NL8H2thQg+TxO1Ge9NifKM8vyshujrjDHaz1f85dz
+# YQiM52P7dophZA/MWq5xbF9ag9O7c+7vvIz7ih2L2Q/b5FUj3d3EtjVUP2c864ba
+# GWKTFPbypwcZOhdLsFQL2Sjry5dEOoLCKbBaEyFg8neLZkZKiSJs9K8CLL14sVjK
+# M8+9ah1+V/t25mDJKQsoaWQvEb4yneuLSAFnnzva9xJvF3n/HvTHjUxaJGerooAy
+# tNRKGX9WjqkRiJ32RI5RL46T8dIUeQqhiT4x82/3TMWyHszcjhaJbcZHwxVyBfJN
+# 4FsB5Ql+W6+DHhkP9ZQaze7kZdROBtBPcqCFHYvcJOkntoBZoM/UZtLPoYIDTDCC
 # A0gGCSqGSIb3DQEJBjGCAzkwggM1AgEBMIGSMH0xCzAJBgNVBAYTAkdCMRswGQYD
 # VQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGDAWBgNV
 # BAoTD1NlY3RpZ28gTGltaXRlZDElMCMGA1UEAxMcU2VjdGlnbyBSU0EgVGltZSBT
 # dGFtcGluZyBDQQIRAJA5f5rSSjoT8r2RXwg4qUMwDQYJYIZIAWUDBAICBQCgeTAY
-# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjA4MDUx
-# NDQ4MzVaMD8GCSqGSIb3DQEJBDEyBDBa2Z5FYegJI4pqnre06FbhD1+od/OvZzcz
-# LjmPW8Bo1p26hvRDvTOw3E7nl+J0UekwDQYJKoZIhvcNAQEBBQAEggIASNInSHkf
-# qbHj4BCLwagE4cbTed3ok6Q4lvAkyY3imDkhNYGbtYmgztOQ7FeGKTG9WR93Wdt6
-# oR0JJnBqiI991p7LOJC+ZisErtcmjBDuu2EFi3TEUDB/CFLunVlBMLs7tQgDI6VC
-# GQd+70MBeC8xBgtEpLcqlgRCUw8PpolNPpxIDCWULO/aPHFH9YMJfHiqDPA9zoWy
-# Dy18TGMUx4Dj0gTdCUQB6es996vQX5zf759bpRGO1q2AdeALs+INUq9QbrCOph16
-# BS0nhoyEsmMxOirmkL5Z7pEBgzx5HXA0a2kp8/M0WkXlSgDqoIJ9h5Rj6INTPUMD
-# s34vgy1dcmYujb4uwdBaiCuLAVStSGg8Ch8oqCK4GA4PdrkRE1pBpIre/kTWQmDI
-# rvfk/dWejuCWpS19PoN3C/jRuKkyycoztJH/A5uaSWLKvXT7tpgOdSSAg+TMtjQy
-# 6AWqQEEES9IRnIG4DkwoIQNMhuigafdKH9r1evW+A2vzvh1ujozPB16i7soNnTgO
-# lgAV1MafFnjZdNV8le+GsPDtVLpn1/XRLE4t7VlsXIeWf9tTQs8XWb/X5pczksT6
-# 52tMnm+MJPke69/05yARae4MYw8/kNqcEayXDjYMWXQxoRhooXn2MoiIR7YYcLSv
-# 1m5QcuqYlP5V5N7ify5kk1wJlPxzhEh4Yhc=
+# BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMzA0MDQx
+# NDE1MzZaMD8GCSqGSIb3DQEJBDEyBDDBq66qQiNGP6QcwXDWyQU9NRiB38Mq0Y+O
+# bR5Y5wSQay9Rieq3awzDLi0/XztqbDAwDQYJKoZIhvcNAQEBBQAEggIAN+nB7rzT
+# lS8sNinFSAb7E8v7EOclrR7fu4Kn55cvt9c2J3OpD+DVCOv/Z6flZ+AK4HksrKmq
+# Zqk/x8P3FZp+z7mfBNQKZ1KFV8Bdlv7GueqQqu1/GORorTaI4JvW9DTm9fRwp+2v
+# 0vTwc+ugqC0huDdLPsDNqMXcQSn+cCoyUN0e9wF7HBscaa3UrncqzrSHfTbrdYVi
+# NPxHxiqFwxDdC1tYtH8gYaoSKDGPuR+v/Ogb6YrQ8HQyVvEt6AWZf0vlMxXu1J88
+# Zl70xHftMavfW9YvsDqlW9Lb9PKDKDeVxJU5NlGIA5pK8kjZM/W76M03wmEYO7fE
+# i6jzYvCG0upvX4caMIbuA0y97HS/4oBCB+SPlHuGjwp9oBHlojqIyhr7qM08IcEW
+# e4rHs+ho2c38c4XH5KL9rhhp9zJYrvbp8k5Cvpsrd3nXHzvjsie4027zFKuo3IWq
+# D6l7Qukfagc7KACxSCn01445GA8eDHg96vxWV0YikRD2BvbnSYj7dy3vmft/y9XU
+# 8jh50xT6NBjM2jAIxoqxbkS0yN7nPBVkx9VZdwkgFPSBoNY/BbwI7vdD7+3rrDGc
+# X6VFgP6erw5iVSJCBV0yydrQcMtmH1v7s3EjJhXivFiau9uKgvOh1SkUaZQd10+U
+# V5vw2vMVvbREyVPJrpvqKKdH4mbbCPMky3U=
 # SIG # End signature block
